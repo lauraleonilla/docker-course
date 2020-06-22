@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  devopsdockeruh:
+    image: devopsdockeruh/first_volume_exercise
+    volumes:
+      - .:/mydir
+    container_name: devops

@@ -1,2 +1,2 @@
-Link to the heroic app: 
+Link to the heroku app: 
 https://exerciseapplication.herokuapp.com
