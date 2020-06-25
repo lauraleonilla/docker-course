@@ -1,0 +1,34 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: example
+  redis:
+    image: redis:latest
+    ports:
+      - "5432:5432"
+  backend:
+    build: ./backend-example-docker
+    environment:
+      - REDIS=redis
+      - REDIS_PORT=6379
+      - FRONT_URL=http://localhost:5000
+      - DB_HOST=db
+      - DB_USERNAME=dbuser
+      - DB_PASSWORD=example
+    depends_on:
+      - db
+    ports:
+      - 8000:8000
+    command: npm start
+  frontend:
+    build: ./frontend-example-docker
+    environment:
+      - API_URL=http://localhost:8000
+    ports:
+      - 5000:5000
+    command: npm start
