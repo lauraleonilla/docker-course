@@ -1,4 +1,6 @@
-FROM node:latest
+#Changes made: took out ENV API_URL
+
+ROM node:latest
 
 WORKDIR /app
 COPY . .

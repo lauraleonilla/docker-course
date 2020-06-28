@@ -1,3 +1,5 @@
+#Changes made: took out ENV FRONT_URL
+
 FROM node:latest
 
 WORKDIR /server
