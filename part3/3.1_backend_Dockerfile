@@ -1,3 +1,5 @@
+#I used node in part 1 so I didn't have to combine the commands here.
+
 FROM node:latest
 
 WORKDIR /server
